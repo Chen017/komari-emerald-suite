@@ -15,7 +15,7 @@
 
 ## 架构概览 (Architecture Overview)
 
-![Komari Emerald Ecosystem](docs/ecosystem.svg)
+![Komari Emerald Ecosystem](docs/ecosystem.png)
 
 Komari Emerald Ecosystem 采用**独立代码库、松耦合协作、优雅降级**的架构设计。无需合并代码库或引入重量级单体依赖，各组件即可协同提供高颜值的监控前端与专业的可用性、网络质量数据能力。
 
