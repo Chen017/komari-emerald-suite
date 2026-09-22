@@ -96,17 +96,6 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合协作、优雅降�
 
 ---
 
-## GitHub Profile 展示建议 (Profile Pin Strategy)
-
-GitHub 个人主页通常受限于 Pin 数量（最多 6 个）。使用本 Suite 仓库可作为统一入口：
-
-- **Pin 1**：`komari-emerald-suite` (生态统一入口与全景图)
-- **Pin 2**：`komari-theme-emerald` (旗舰前端主题，直观吸引用户)
-
-无需将三个或四个子仓库全部固定，即可完美呈现完整的 Komari 监控生态。
-
----
-
 ## 许可证 (License)
 
 本项目采用 [MIT License](LICENSE) 协议开源。
