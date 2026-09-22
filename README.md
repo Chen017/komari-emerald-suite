@@ -23,11 +23,11 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合协作、优雅降�
 
 ## 生态项目矩阵 (Ecosystem Projects)
 
-### 1. [Komari Emerald](https://github.com/Chen017/komari-theme-emerald) (旗舰前端主题)
+### 1. [Komari Emerald Insights](https://github.com/Chen017/komari-theme-emerald-insights) (旗舰前端主题)
 
 > **Modern Komari theme with Resource Insights, traffic trends, availability, IPQA visualization, cost and renewal analytics.**
 
-- **仓库地址**：[Chen017/komari-theme-emerald](https://github.com/Chen017/komari-theme-emerald)
+- **仓库地址**：[Chen017/komari-theme-emerald-insights](https://github.com/Chen017/komari-theme-emerald-insights)
 - **定位**：生态的统一可视化呈现层与交互中心。
 - **核心能力**：
   - **经典监控**：轻量精致的节点网格与详情视图。
@@ -72,7 +72,7 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合协作、优雅降�
 
 - **仓库地址**：[Chen017/IP-Quality-Archive](https://github.com/Chen017/IP-Quality-Archive)
 - **定位**：运行于被监控 VPS 节点的轻量级质量检测与建档工具。
-- **与生态的关系**：各 VPS 节点每天自动执行 IPQA 检测并生成归档，由 `komari-plugin-ipqa-alert-report` 定时拉取并交由 `komari-theme-emerald` 呈现。
+- **与生态的关系**：各 VPS 节点每天自动执行 IPQA 检测并生成归档，由 `komari-plugin-ipqa-alert-report` 定时拉取并交由 `komari-theme-emerald-insights` 呈现。
 
 ---
 
@@ -89,9 +89,9 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合协作、优雅降�
 
 | 需求场景 | 安装推荐 |
 | :--- | :--- |
-| **基础监控 + 高颜值主题** | `komari-theme-emerald` |
-| **需要 30 天精确可用性与在线率** | `komari-theme-emerald` + `komari-plugin-availability-history` |
-| **需要集群 IP 质量监测与风险矩阵** | `komari-theme-emerald` + `komari-plugin-ipqa-alert-report` + VPS 安装 `IP-Quality-Archive` |
+| **基础监控 + 高颜值主题** | `komari-theme-emerald-insights` |
+| **需要 30 天精确可用性与在线率** | `komari-theme-emerald-insights` + `komari-plugin-availability-history` |
+| **需要集群 IP 质量监测与风险矩阵** | `komari-theme-emerald-insights` + `komari-plugin-ipqa-alert-report` + VPS 安装 `IP-Quality-Archive` |
 | **完整全能生态体验** | **全部安装**（推荐） |
 
 ---
