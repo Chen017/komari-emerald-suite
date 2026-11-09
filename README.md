@@ -30,6 +30,7 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合、优雅降级**的
   - **经典监控**：轻量精致的节点网格与详情视图。
   - **每日流量趋势**：7 天 / 30 天 / 本周期流量汇聚，平滑处理重启与计数器重置。
   - **近 30 天在线率**：无缝消费 Availability History 账本，展示真实覆盖率。
+  - **CPU Steal 原生叠加**：可选消费 CPU Steal Monitor 的两分钟历史数据，在既有 CPU/负载图上呈现 Steal%，共享实时与历史时间轴。
   - **IP 质量概览**：无缝消费 IPQA 归档，提供节点质量卡片、风险矩阵、流媒体/AI 解锁矩阵与逐日档案回溯。
   - **成本与续费**：多币种汇率统一折算、月均与年度预算分析及续费时间轴。
 
@@ -59,7 +60,21 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合、优雅降级**的
 
 ---
 
-### 4. [IP-Quality-Archive](https://github.com/Chen017/IP-Quality-Archive) (外部依赖 / VPS 采集器)
+### 4. [CPU Steal Monitor](https://github.com/Chen017/komari-plugin-cpu-steal-monitor)（CPU 抢占率监控插件）
+
+- **仓库地址**：[Chen017/komari-plugin-cpu-steal-monitor](https://github.com/Chen017/komari-plugin-cpu-steal-monitor)
+- **定位**：**可独立运行的 CPU Steal 数据采集、时间序列与 API 服务**；推荐与 Emerald Insights 主题联动，但不依赖主题。
+- **核心能力**：
+  - **两分钟只读采集**：直接使用 Komari 现有 Agent 远程命令读取 Linux /proc/stat，不安装额外 VPS 常驻进程。
+  - **准确的 Steal 百分比**：根据两个累计计数器快照求差，保留实际采样时间范围、断连和重启缺口；Steal 0% 与无数据分开。
+  - **独立 API**：提供 `/v1/history`（逐区间历史）、`/v1/summary`（最新/平均/最大值及覆盖率）、管理员 `/v1/health`（诊断）。
+  - **主题联动**：为 Emerald Insights 的 CPU / Load Average 双轴图叠加 Steal（2 分钟均值），兼容现有历史图表时间桶。
+- **要求**：Komari Agent 必须允许远程命令执行；如果关闭了 Agent 远程命令权限，本插件无法获取 Steal。
+- **安装关系**：只要独立 Steal API，**仅安装插件**即可；需要图表叠加，再安装 Emerald Insights 主题。
+
+---
+
+### 5. [IP-Quality-Archive](https://github.com/Chen017/IP-Quality-Archive) (外部依赖 / VPS 采集器)
 
 - **仓库地址**：[Chen017/IP-Quality-Archive](https://github.com/Chen017/IP-Quality-Archive)
 - **定位**：运行于被监控 VPS 节点的轻量级质量检测与建档工具。
@@ -73,8 +88,10 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合、优雅降级**的
 | :--- | :--- |
 | **基础监控 + 高颜值主题** | `komari-theme-emerald-insights` |
 | **需要 30 天精确可用性与在线率** | `komari-theme-emerald-insights` + `komari-plugin-availability-history` |
+| **只需独立 CPU Steal 数据/API** | `komari-plugin-cpu-steal-monitor`（不依赖主题） |
+| **需要在 CPU/负载图中叠加 Steal** | `komari-plugin-cpu-steal-monitor` + `komari-theme-emerald-insights` |
 | **需要集群 IP 质量监测与风险矩阵** | `komari-theme-emerald-insights` + `komari-plugin-ipqa-alert-report` + VPS 安装 `IP-Quality-Archive` |
-| **完整全能生态体验** | **全部安装**（推荐） |
+| **完整全能生态体验** | **主题 + 三款 Komari 插件**，需要 IPQA 时在 VPS 安装 IP-Quality-Archive |
 
 ---
 
