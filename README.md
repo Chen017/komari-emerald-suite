@@ -74,7 +74,15 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合、优雅降级**的
 
 ---
 
-### 5. [IP-Quality-Archive](https://github.com/Chen017/IP-Quality-Archive) (外部依赖 / VPS 采集器)
+### 5. [Line Quality Monitor](https://github.com/Chen017/komari-plugin-line-quality-monitor)（线路质量监控插件）
+
+- **定位**：按 VPS 与 Ping 任务自动学习延迟和波动。
+- **通知**：通过 Komari 官方渠道提醒反复跳动、持续变慢、阶段性改善和恢复。
+- **搭配**：插件可独立使用，推荐搭配 Emerald Insights，在节点详情查看 Ping 延迟和丢包趋势。
+
+---
+
+### 6. [IP-Quality-Archive](https://github.com/Chen017/IP-Quality-Archive) (外部依赖 / VPS 采集器)
 
 - **仓库地址**：[Chen017/IP-Quality-Archive](https://github.com/Chen017/IP-Quality-Archive)
 - **定位**：运行于被监控 VPS 节点的轻量级质量检测与建档工具。
@@ -91,7 +99,8 @@ Komari Emerald Ecosystem 采用**独立代码库、松耦合、优雅降级**的
 | **只需独立 CPU Steal 数据/API** | `komari-plugin-cpu-steal-monitor`（不依赖主题） |
 | **需要在 CPU/负载图中叠加 Steal** | `komari-plugin-cpu-steal-monitor` + `komari-theme-emerald-insights` |
 | **需要集群 IP 质量监测与风险矩阵** | `komari-theme-emerald-insights` + `komari-plugin-ipqa-alert-report` + VPS 安装 `IP-Quality-Archive` |
-| **完整全能生态体验** | **主题 + 三款 Komari 插件**，需要 IPQA 时在 VPS 安装 IP-Quality-Archive |
+| **需要线路波动、退化和改善通知** | `komari-plugin-line-quality-monitor`，可搭配 Emerald Insights 查看 Ping 图 |
+| **完整全能生态体验** | **主题 + 四款 Komari 插件**，需要 IPQA 时在 VPS 安装 IP-Quality-Archive |
 
 ---
 
